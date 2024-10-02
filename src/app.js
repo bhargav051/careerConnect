@@ -2,8 +2,17 @@ const express = require("express");
 
 const app = express();
 
-app.use("/hello", (req, res) => {
-  res.send("Hello");
+app.get("/user", (req, res) => {
+  res.send("User Info");
+});
+
+app.post("/user", (req, res) => {
+  // saving the data
+  res.send("User Data saved successfully");
+});
+
+app.delete("/user", (req, res) => {
+  res.send("User Data deleted successfully");
 });
 
 app.use("/test", (req, res) => {
