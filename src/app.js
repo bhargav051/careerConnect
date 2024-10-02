@@ -3,7 +3,12 @@ const express = require("express");
 const app = express();
 
 app.get("/user", (req, res) => {
-  res.send("User Info");
+  res.send(req.query);
+});
+
+app.get("/user/:userID/:firstName/:lastName", (req, res) => {
+  res.send(req.params);
+  // res.send("User Info");
 });
 
 app.post("/user", (req, res) => {
